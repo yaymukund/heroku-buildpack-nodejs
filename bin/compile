@@ -68,6 +68,10 @@ fi
 status "Installing dependencies"
 npm install --production 2>&1 | indent
 
+cd $build_dir
+./script/setup
+cd -
+
 status "Pruning unused dependencies"
 npm prune 2>&1 | indent
 
